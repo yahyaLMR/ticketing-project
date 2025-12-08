@@ -68,7 +68,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFE6A7]/20 to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-[#432818] via-[#6F1D1B] to-[#99582A] text-white overflow-hidden">
+      <div className="relative bg-gradient-to-br from-[#f17934] via-[#d61f1c] to-[#ff170f] text-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#BB9457]/20 via-transparent to-[#6F1D1B]/20"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#BB9457] rounded-full blur-3xl opacity-20 animate-pulse"></div>
@@ -87,7 +87,7 @@ const Home = () => {
           </p>
           <button 
             onClick={scrollToEvents}
-            className="group relative bg-gradient-to-r from-[#db8e8c] to-[#ff6a00] hover:from-[#ce9368] hover:to-[#c07171] text-white text-lg font-bold py-5 px-10 rounded-full transition-all duration-300 shadow-2xl hover:shadow-[#6F1D1B]/50 hover:scale-105 flex items-center space-x-2 overflow-hidden"
+            className="group relative bg-gradient-to-r from-[#c93631] to-[#ff6a00] hover:from-[#b16e3e] hover:to-[#ee4040] text-white text-lg font-bold py-5 px-10 rounded-full transition-all duration-300 shadow-2xl hover:shadow-[#6F1D1B]/50 hover:scale-105 flex items-center space-x-2 overflow-hidden"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></span>
             <span className="relative">Explore Events</span>
