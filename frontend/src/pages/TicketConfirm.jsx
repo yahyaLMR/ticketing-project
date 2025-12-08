@@ -62,7 +62,7 @@ const TicketConfirm = () => {
 
   if (loading) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-50">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600 mb-4"></div>
           <p className="text-xl text-gray-600">Loading your ticket...</p>
@@ -73,7 +73,7 @@ const TicketConfirm = () => {
 
   if (error || !ticket) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-gray-50 to-gray-100">
         <div className="bg-white border-l-4 border-red-500 p-8 rounded-lg max-w-md text-center shadow-lg">
           <CancelIcon sx={{ fontSize: 64, color: '#EF4444' }} className="mb-4" />
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Ticket Not Found</h2>
@@ -101,13 +101,13 @@ const TicketConfirm = () => {
           onClose={() => setNotification(null)}
         />
       )}
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-12 px-4">
+      <div className="min-h-screen bg-linear-to-br from-green-50 via-blue-50 to-purple-50 py-12 px-4">
         <div className="container mx-auto max-w-2xl">
         {/* Success Animation */}
         <div className={`transform transition-all duration-700 ${showSuccess ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-green-400">
             {/* Header */}
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-8 text-center relative overflow-hidden">
+            <div className="bg-linear-to-r from-green-500 to-emerald-600 p-8 text-center relative overflow-hidden">
               <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-20 translate-y-20"></div>
@@ -165,7 +165,7 @@ const TicketConfirm = () => {
 
               {/* QR Code */}
               <div className="mb-8">
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-200 shadow-inner">
+                <div className="bg-linear-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-200 shadow-inner">
                   <p className="text-center text-sm text-gray-600 mb-4 font-semibold">Scan this QR code at the venue</p>
                   <div className="flex justify-center">
                     <div className="bg-white p-4 rounded-xl shadow-lg border-4 border-white">
@@ -179,7 +179,7 @@ const TicketConfirm = () => {
               <div>
                 <button 
                   onClick={handleDownload}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                  className="w-full bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
                 >
                   <span className="mr-2">📥</span>
                   Download Ticket as PDF

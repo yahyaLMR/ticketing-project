@@ -92,7 +92,7 @@ const Dashboard = () => {
           onClose={() => setNotification(null)}
         />
       )}
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8 flex items-center space-x-3">
@@ -105,7 +105,7 @@ const Dashboard = () => {
 
         {/* Statistics Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-linear-to-br from-blue-500 to-blue-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
             <div className="flex items-center justify-between mb-2">
               <EventIcon sx={{ fontSize: 40 }} />
               <span className="text-sm bg-white/20 px-2 py-1 rounded-full">Total</span>
@@ -113,7 +113,7 @@ const Dashboard = () => {
             <p className="text-4xl font-bold mb-1">{stats.totalEvents}</p>
             <p className="text-blue-100 text-sm">Events</p>
           </div>
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-linear-to-br from-purple-500 to-purple-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
             <div className="flex items-center justify-between mb-2">
               <EventSeatIcon sx={{ fontSize: 40 }} />
               <span className="text-sm bg-white/20 px-2 py-1 rounded-full">Capacity</span>
@@ -121,7 +121,7 @@ const Dashboard = () => {
             <p className="text-4xl font-bold mb-1">{stats.totalSeats}</p>
             <p className="text-purple-100 text-sm">Total Seats</p>
           </div>
-          <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-linear-to-br from-green-500 to-green-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
             <div className="flex items-center justify-between mb-2">
               <CheckCircleIcon sx={{ fontSize: 40 }} />
               <span className="text-sm bg-white/20 px-2 py-1 rounded-full">Sold</span>
@@ -129,7 +129,7 @@ const Dashboard = () => {
             <p className="text-4xl font-bold mb-1">{stats.soldSeats}</p>
             <p className="text-green-100 text-sm">Seats Sold</p>
           </div>
-          <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-linear-to-br from-orange-500 to-orange-600 p-6 rounded-2xl shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
             <div className="flex items-center justify-between mb-2">
               <AttachMoneyIcon sx={{ fontSize: 40 }} />
               <span className="text-sm bg-white/20 px-2 py-1 rounded-full">Revenue</span>
@@ -257,7 +257,7 @@ const Dashboard = () => {
         ) : (
           <div className="overflow-x-auto rounded-xl border border-gray-200">
             <table className="w-full text-left border-collapse">
-              <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
+              <thead className="bg-linear-to-r from-gray-50 to-gray-100">
                 <tr>
                   <th className="p-4 border-b-2 border-gray-200 font-bold text-gray-700">Event</th>
                   <th className="p-4 border-b-2 border-gray-200 font-bold text-gray-700">Category</th>
@@ -275,7 +275,7 @@ const Dashboard = () => {
                         {event.imageURL ? (
                           <img src={event.imageURL} alt={event.title} className="w-12 h-12 rounded-lg object-cover mr-3" />
                         ) : (
-                          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center mr-3 text-white">
+                          <div className="w-12 h-12 rounded-lg bg-linear-to-br from-blue-400 to-purple-500 flex items-center justify-center mr-3 text-white">
                             {event.category === 'cinema' ? (
                               <MovieIcon sx={{ fontSize: 28 }} />
                             ) : event.category === 'football' ? (
@@ -316,7 +316,7 @@ const Dashboard = () => {
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                             <div 
-                              className="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-500"
+                              className="bg-linear-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-500"
                               style={{ width: `${(event.totalSeats - event.availableSeats) / event.totalSeats * 100}%` }}
                             ></div>
                           </div>

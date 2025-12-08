@@ -25,7 +25,7 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-gray-50">
         <Header />
-        <main className="flex-grow">
+        <main className="grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/event/:id" element={<EventDetails />} />
@@ -38,7 +38,7 @@ function App() {
           <div className="container mx-auto px-4 text-center">
             <div className="mb-4 flex items-center justify-center space-x-2">
               <ConfirmationNumberIcon sx={{ fontSize: 32, color: '#60A5FA' }} />
-              <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h3 className="text-xl font-bold bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 EventHub
               </h3>
             </div>

@@ -113,7 +113,7 @@ const EventDetails = () => {
           onClose={() => setNotification(null)}
         />
       )}
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center text-sm text-gray-600">
@@ -132,7 +132,7 @@ const EventDetails = () => {
               {event.imageURL ? (
                 <img src={event.imageURL} alt={event.title} className="w-full h-full object-cover min-h-[500px]" />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 min-h-[500px] flex items-center justify-center text-white">
+                <div className="w-full h-full bg-linear-to-br from-blue-400 to-purple-500 min-h-[500px] flex items-center justify-center text-white">
                   {event.category === 'cinema' ? (
                     <MovieIcon sx={{ fontSize: 144 }} />
                   ) : event.category === 'football' ? (
@@ -154,7 +154,7 @@ const EventDetails = () => {
 
             {/* Details Section */}
             <div className="md:w-1/2 p-8 lg:p-10 flex flex-col">
-              <div className="flex-grow">
+              <div className="grow">
                 <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 leading-tight">{event.title}</h1>
                 <p className="text-gray-600 mb-8 leading-relaxed text-lg">{event.description}</p>
                 
@@ -186,7 +186,7 @@ const EventDetails = () => {
               </div>
 
               {/* Booking Form */}
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-100 shadow-inner">
+              <div className="bg-linear-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-100 shadow-inner">
                 <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
                   <ConfirmationNumberIcon sx={{ fontSize: 28, color: '#3B82F6' }} className="mr-2" />
                   <span>Book Your Tickets</span>
@@ -200,7 +200,7 @@ const EventDetails = () => {
                 ) : (
                   <form onSubmit={submitHandler} className="space-y-5">
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
                         <PersonIcon sx={{ fontSize: 16 }} />
                         <span>Full Name *</span>
                       </label>
@@ -214,7 +214,7 @@ const EventDetails = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
                         <EmailIcon sx={{ fontSize: 16 }} />
                         <span>Email Address *</span>
                       </label>
@@ -228,7 +228,7 @@ const EventDetails = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
                         <ConfirmationNumberIcon sx={{ fontSize: 16 }} />
                         <span>Number of Tickets *</span>
                       </label>
@@ -274,7 +274,7 @@ const EventDetails = () => {
                     <button 
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                      className="w-full bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
                     >
                       {submitting ? (
                         <>

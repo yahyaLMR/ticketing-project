@@ -23,7 +23,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 text-white shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+    <header className="bg-linear-to-r from-gray-900 via-blue-900 to-purple-900 text-white shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -32,7 +32,7 @@ const Header = () => {
             className="flex items-center space-x-2 text-2xl font-extrabold text-white hover:scale-105 transition-transform duration-300"
           >
             <ConfirmationNumberIcon sx={{ fontSize: 32, color: '#60A5FA' }} />
-            <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               EventHub
             </span>
           </Link>
@@ -40,7 +40,16 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Link 
-              to="/" 
+              to="/#events-section" 
+              onClick={(e) => {
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  const element = document.getElementById('events-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
               className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                 isActive('/') 
                   ? 'bg-white/20 text-white shadow-lg' 
@@ -66,7 +75,7 @@ const Header = () => {
                 </Link>
                 
                 <div className="flex items-center space-x-3 bg-white/10 px-3 py-2 rounded-lg">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold">
+                  <div className="w-8 h-8 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold">
                     {userInfo.username?.[0]?.toUpperCase() || 'A'}
                   </div>
                   <span className="text-sm font-medium">{userInfo.username}</span>
@@ -74,7 +83,7 @@ const Header = () => {
                 
                 <button 
                   onClick={logoutHandler}
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
+                  className="bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
                 >
                   <LogoutIcon sx={{ fontSize: 18 }} />
                   <span>Logout</span>
@@ -83,7 +92,7 @@ const Header = () => {
             ) : (
               <Link 
                 to="/admin/login"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
+                className="bg-linear-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
               >
                 <LoginIcon sx={{ fontSize: 18 }} />
                 <span>Admin Login</span>
@@ -109,8 +118,17 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 space-y-2 animate-fadeIn">
             <Link 
-              to="/" 
-              onClick={() => setMobileMenuOpen(false)}
+              to="/#events-section" 
+              onClick={(e) => {
+                setMobileMenuOpen(false);
+                if (location.pathname === '/') {
+                  e.preventDefault();
+                  const element = document.getElementById('events-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
               className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all ${
                 isActive('/') 
                   ? 'bg-white/20 text-white' 
@@ -153,7 +171,7 @@ const Header = () => {
               <Link 
                 to="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold"
+                className="flex items-center justify-center space-x-2 px-4 py-3 bg-linear-to-r from-blue-500 to-purple-600 rounded-lg font-semibold"
               >
                 <LoginIcon sx={{ fontSize: 20 }} />
                 <span>Admin Login</span>
