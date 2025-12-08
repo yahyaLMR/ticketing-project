@@ -62,10 +62,10 @@ const TicketConfirm = () => {
 
   if (loading) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-blue-50 to-purple-50">
+      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-[#FFE6A7] to-[#BB9457]/20">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600 mb-4"></div>
-          <p className="text-xl text-gray-600">Loading your ticket...</p>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#BB9457] mb-4"></div>
+          <p className="text-xl text-[#432818]/80">Loading your ticket...</p>
         </div>
       </div>
     );
@@ -73,14 +73,14 @@ const TicketConfirm = () => {
 
   if (error || !ticket) {
     return (
-      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-gray-50 to-gray-100">
-        <div className="bg-white border-l-4 border-red-500 p-8 rounded-lg max-w-md text-center shadow-lg">
-          <CancelIcon sx={{ fontSize: 64, color: '#EF4444' }} className="mb-4" />
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Ticket Not Found</h2>
-          <p className="text-gray-600 mb-6">{error}</p>
+      <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-[#FFE6A7] to-[#BB9457]/20">
+        <div className="bg-white border-l-4 border-[#6F1D1B] p-8 rounded-lg max-w-md text-center shadow-lg">
+          <CancelIcon sx={{ fontSize: 64, color: '#6F1D1B' }} className="mb-4" />
+          <h2 className="text-2xl font-bold text-[#432818] mb-2">Ticket Not Found</h2>
+          <p className="text-[#432818]/80 mb-6">{error}</p>
           <Link 
             to="/" 
-            className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-200 font-semibold"
+            className="inline-flex items-center space-x-2 bg-[#6F1D1B] hover:bg-[#432818] text-white px-6 py-3 rounded-lg transition duration-200 font-semibold"
           >
             <ArrowBackIcon sx={{ fontSize: 18 }} />
             <span>Browse Events</span>
@@ -101,31 +101,31 @@ const TicketConfirm = () => {
           onClose={() => setNotification(null)}
         />
       )}
-      <div className="min-h-screen bg-linear-to-br from-green-50 via-blue-50 to-purple-50 py-12 px-4">
+      <div className="min-h-screen bg-linear-to-br from-[#FFE6A7] via-[#BB9457]/20 to-[#FFE6A7] py-12 px-4">
         <div className="container mx-auto max-w-2xl">
         {/* Success Animation */}
         <div className={`transform transition-all duration-700 ${showSuccess ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-green-400">
+          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-[#BB9457]">
             {/* Header */}
-            <div className="bg-linear-to-r from-green-500 to-emerald-600 p-8 text-center relative overflow-hidden">
+            <div className="bg-linear-to-r from-[#6F1D1B] to-[#99582A] p-8 text-center relative overflow-hidden">
               <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-20 translate-y-20"></div>
               </div>
               <div className="relative">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-bounce">
-                  <CheckCircleIcon sx={{ fontSize: 64, color: '#10B981' }} />
+                  <CheckCircleIcon sx={{ fontSize: 64, color: '#6F1D1B' }} />
                 </div>
                 <h1 className="text-4xl font-extrabold text-white mb-2">Booking Confirmed!</h1>
-                <p className="text-green-100 text-lg">Your ticket is ready</p>
+                <p className="text-[#FFE6A7] text-lg">Your ticket is ready</p>
               </div>
             </div>
 
             {/* Ticket Details */}
             <div className="p-8">
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">{ticket.eventId.title}</h2>
-                <div className="flex items-center text-gray-600 space-x-2">
+                <h2 className="text-3xl font-bold text-[#432818] mb-2">{ticket.eventId.title}</h2>
+                <div className="flex items-center text-[#432818]/80 space-x-2">
                   <EventIcon sx={{ fontSize: 20 }} />
                   <span>
                     {new Date(ticket.eventId.date).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
@@ -135,38 +135,38 @@ const TicketConfirm = () => {
 
               {/* Info Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                  <PersonIcon sx={{ fontSize: 20, color: '#3B82F6' }} className="mb-1" />
-                  <p className="text-xs text-gray-600 mb-1">Customer Name</p>
-                  <p className="font-bold text-gray-900">{ticket.customerName}</p>
+                <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                  <PersonIcon sx={{ fontSize: 20, color: '#6F1D1B' }} className="mb-1" />
+                  <p className="text-xs text-[#432818]/80 mb-1">Customer Name</p>
+                  <p className="font-bold text-[#432818]">{ticket.customerName}</p>
                 </div>
-                <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                  <EmailIcon sx={{ fontSize: 20, color: '#8B5CF6' }} className="mb-1" />
-                  <p className="text-xs text-gray-600 mb-1">Email</p>
-                  <p className="font-bold text-gray-900 text-sm break-all">{ticket.customerEmail}</p>
+                <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                  <EmailIcon sx={{ fontSize: 20, color: '#99582A' }} className="mb-1" />
+                  <p className="text-xs text-[#432818]/80 mb-1">Email</p>
+                  <p className="font-bold text-[#432818] text-sm break-all">{ticket.customerEmail}</p>
                 </div>
-                <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                  <ConfirmationNumberIcon sx={{ fontSize: 20, color: '#10B981' }} className="mb-1" />
-                  <p className="text-xs text-gray-600 mb-1">Quantity</p>
-                  <p className="font-bold text-gray-900 text-2xl">{ticket.quantity} {ticket.quantity === 1 ? 'Ticket' : 'Tickets'}</p>
+                <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                  <ConfirmationNumberIcon sx={{ fontSize: 20, color: '#432818' }} className="mb-1" />
+                  <p className="text-xs text-[#432818]/80 mb-1">Quantity</p>
+                  <p className="font-bold text-[#432818] text-2xl">{ticket.quantity} {ticket.quantity === 1 ? 'Ticket' : 'Tickets'}</p>
                 </div>
-                <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
-                  <AttachMoneyIcon sx={{ fontSize: 20, color: '#F97316' }} className="mb-1" />
-                  <p className="text-xs text-gray-600 mb-1">Total Price</p>
-                  <p className="font-bold text-green-600 text-2xl">${totalPrice}</p>
+                <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                  <AttachMoneyIcon sx={{ fontSize: 20, color: '#BB9457' }} className="mb-1" />
+                  <p className="text-xs text-[#432818]/80 mb-1">Total Price</p>
+                  <p className="font-bold text-[#6F1D1B] text-2xl">${totalPrice}</p>
                 </div>
               </div>
 
               {/* Ticket ID */}
-              <div className="bg-gray-50 p-4 rounded-xl mb-8 border-2 border-dashed border-gray-300">
-                <p className="text-xs text-gray-600 mb-1 text-center">Ticket ID</p>
-                <p className="font-mono font-bold text-center text-lg text-gray-900">{ticket._id}</p>
+              <div className="bg-[#FFE6A7]/20 p-4 rounded-xl mb-8 border-2 border-dashed border-[#BB9457]/50">
+                <p className="text-xs text-[#432818]/80 mb-1 text-center">Ticket ID</p>
+                <p className="font-mono font-bold text-center text-lg text-[#432818]">{ticket._id}</p>
               </div>
 
               {/* QR Code */}
               <div className="mb-8">
-                <div className="bg-linear-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-200 shadow-inner">
-                  <p className="text-center text-sm text-gray-600 mb-4 font-semibold">Scan this QR code at the venue</p>
+                <div className="bg-linear-to-br from-[#FFE6A7]/50 to-[#BB9457]/20 p-6 rounded-2xl border-2 border-[#BB9457] shadow-inner">
+                  <p className="text-center text-sm text-[#432818]/80 mb-4 font-semibold">Scan this QR code at the venue</p>
                   <div className="flex justify-center">
                     <div className="bg-white p-4 rounded-xl shadow-lg border-4 border-white">
                       <img src={ticket.qrCode} alt="Ticket QR Code" className="w-56 h-56" />
@@ -179,7 +179,7 @@ const TicketConfirm = () => {
               <div>
                 <button 
                   onClick={handleDownload}
-                  className="w-full bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                  className="w-full bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
                 >
                   <span className="mr-2">📥</span>
                   Download Ticket as PDF
@@ -187,8 +187,8 @@ const TicketConfirm = () => {
               </div>
 
               {/* Info Note */}
-              <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <p className="text-sm text-gray-700 text-center">
+              <div className="mt-8 p-4 bg-[#FFE6A7]/30 rounded-xl border border-[#BB9457]">
+                <p className="text-sm text-[#432818] text-center">
                   <span className="font-semibold">ℹ️ Important:</span> Please download and bring your ticket (printed or digital) to the event entrance.
                 </p>
               </div>
@@ -197,7 +197,7 @@ const TicketConfirm = () => {
               <div className="mt-6 text-center">
                 <Link 
                   to="/" 
-                  className="inline-block text-blue-600 hover:text-blue-700 font-semibold transition"
+                  className="inline-block text-[#6F1D1B] hover:text-[#99582A] font-semibold transition"
                 >
                   ← Back to Events
                 </Link>

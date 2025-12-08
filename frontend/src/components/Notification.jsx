@@ -17,28 +17,28 @@ const Notification = ({ type = 'info', message, onClose, duration = 5000 }) => {
 
     const types = {
     success: {
-      bg: 'bg-green-50',
-      border: 'border-green-500',
-      text: 'text-green-800',
-      icon: <CheckCircleIcon sx={{ fontSize: 24, color: '#10B981' }} />,
+      bg: 'bg-[#BB9457]/10',
+      border: 'border-[#BB9457]',
+      text: 'text-[#432818]',
+      icon: <CheckCircleIcon sx={{ fontSize: 24, color: '#BB9457' }} />,
     },
     error: {
-      bg: 'bg-red-50',
-      border: 'border-red-500',
-      text: 'text-red-800',
-      icon: <ErrorIcon sx={{ fontSize: 24, color: '#EF4444' }} />,
+      bg: 'bg-[#6F1D1B]/10',
+      border: 'border-[#6F1D1B]',
+      text: 'text-[#6F1D1B]',
+      icon: <ErrorIcon sx={{ fontSize: 24, color: '#6F1D1B' }} />,
     },
     warning: {
-      bg: 'bg-yellow-50',
-      border: 'border-yellow-500',
-      text: 'text-yellow-800',
-      icon: <WarningIcon sx={{ fontSize: 24, color: '#F59E0B' }} />,
+      bg: 'bg-[#99582A]/10',
+      border: 'border-[#99582A]',
+      text: 'text-[#99582A]',
+      icon: <WarningIcon sx={{ fontSize: 24, color: '#99582A' }} />,
     },
     info: {
-      bg: 'bg-blue-50',
-      border: 'border-blue-500',
-      text: 'text-blue-800',
-      icon: <InfoIcon sx={{ fontSize: 24, color: '#3B82F6' }} />,
+      bg: 'bg-[#FFE6A7]/20',
+      border: 'border-[#432818]',
+      text: 'text-[#432818]',
+      icon: <InfoIcon sx={{ fontSize: 24, color: '#432818' }} />,
     },
   };
 

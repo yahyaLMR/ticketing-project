@@ -7,6 +7,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import LoginIcon from '@mui/icons-material/Login';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import logo from '../assets/vecteezy_tickets_1189271.png';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,16 +24,17 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-linear-to-r from-gray-900 via-blue-900 to-purple-900 text-white shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+    <header className="bg-linear-to-r from-[#CCD5AE] via-[#E9EDC9] to-[#FAEDCD] text-black shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 text-2xl font-extrabold text-white hover:scale-105 transition-transform duration-300"
+            className="flex items-center space-x-2 text-2xl font-extrabold text-black hover:scale-105 transition-transform duration-300"
           >
-            <ConfirmationNumberIcon sx={{ fontSize: 32, color: '#60A5FA' }} />
-            <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            {/* <ConfirmationNumberIcon sx={{ fontSize: 32, color: '#000000' }} /> */}
+            <img src={logo} alt="EventHub Logo" className="w-20 h-15" />
+            <span className="text-black">
               EventHub
             </span>
           </Link>
@@ -52,8 +54,8 @@ const Header = () => {
               }}
               className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                 isActive('/') 
-                  ? 'bg-white/20 text-white shadow-lg' 
-                  : 'hover:bg-white/10 text-gray-200 hover:text-white'
+                  ? 'bg-[#FEFAE0] text-black shadow-lg' 
+                  : 'hover:bg-[#FEFAE0]/50 text-black hover:text-black'
               }`}
             >
               <TheaterComedyIcon sx={{ fontSize: 20 }} />
@@ -66,24 +68,24 @@ const Header = () => {
                   to="/admin/dashboard" 
                   className={`flex items-center space-x-1 px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                     isActive('/admin/dashboard') 
-                      ? 'bg-white/20 text-white shadow-lg' 
-                      : 'hover:bg-white/10 text-gray-200 hover:text-white'
+                      ? 'bg-[#FEFAE0] text-black shadow-lg' 
+                      : 'hover:bg-[#FEFAE0]/50 text-black hover:text-black'
                   }`}
                 >
                   <DashboardIcon sx={{ fontSize: 20 }} />
                   <span>Dashboard</span>
                 </Link>
                 
-                <div className="flex items-center space-x-3 bg-white/10 px-3 py-2 rounded-lg">
-                  <div className="w-8 h-8 bg-linear-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center font-bold">
+                <div className="flex items-center space-x-3 bg-[#FEFAE0]/50 px-3 py-2 rounded-lg">
+                  <div className="w-8 h-8 bg-linear-to-r from-[#D4A373] to-[#FAEDCD] rounded-full flex items-center justify-center font-bold text-white">
                     {userInfo.username?.[0]?.toUpperCase() || 'A'}
                   </div>
-                  <span className="text-sm font-medium">{userInfo.username}</span>
+                  <span className="text-sm font-medium text-black">{userInfo.username}</span>
                 </div>
                 
                 <button 
                   onClick={logoutHandler}
-                  className="bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
+                  className="bg-linear-to-r from-[#D4A373] to-[#FAEDCD] hover:from-[#FAEDCD] hover:to-[#D4A373] text-black px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
                 >
                   <LogoutIcon sx={{ fontSize: 18 }} />
                   <span>Logout</span>
@@ -92,7 +94,7 @@ const Header = () => {
             ) : (
               <Link 
                 to="/admin/login"
-                className="bg-linear-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
+                className="bg-linear-to-r from-[#D4A373] to-[#FAEDCD] hover:from-[#FAEDCD] hover:to-[#D4A373] text-black px-5 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-1"
               >
                 <LoginIcon sx={{ fontSize: 18 }} />
                 <span>Admin Login</span>
@@ -103,7 +105,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-[#FEFAE0]/50 transition-colors text-black"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
@@ -131,8 +133,8 @@ const Header = () => {
               }}
               className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all ${
                 isActive('/') 
-                  ? 'bg-white/20 text-white' 
-                  : 'hover:bg-white/10 text-gray-200'
+                  ? 'bg-[#FEFAE0] text-black' 
+                  : 'hover:bg-[#FEFAE0]/50 text-black'
               }`}
             >
               <TheaterComedyIcon sx={{ fontSize: 20 }} />
@@ -146,22 +148,22 @@ const Header = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all ${
                     isActive('/admin/dashboard') 
-                      ? 'bg-white/20 text-white' 
-                      : 'hover:bg-white/10 text-gray-200'
+                      ? 'bg-[#FEFAE0] text-black' 
+                      : 'hover:bg-[#FEFAE0]/50 text-black'
                   }`}
                 >
                   <DashboardIcon sx={{ fontSize: 20 }} />
                   <span>Dashboard</span>
                 </Link>
                 
-                <div className="px-4 py-2 bg-white/10 rounded-lg">
-                  <p className="text-sm text-gray-300">Logged in as</p>
-                  <p className="font-semibold">{userInfo.username}</p>
+                <div className="px-4 py-2 bg-[#FEFAE0]/50 rounded-lg">
+                  <p className="text-sm text-black">Logged in as</p>
+                  <p className="font-semibold text-black">{userInfo.username}</p>
                 </div>
                 
                 <button 
                   onClick={logoutHandler}
-                  className="w-full flex items-center space-x-2 px-4 py-3 bg-red-500 hover:bg-red-600 rounded-lg font-semibold transition-colors"
+                  className="w-full flex items-center space-x-2 px-4 py-3 bg-[#D4A373] hover:bg-[#FAEDCD] text-black rounded-lg font-semibold transition-colors"
                 >
                   <LogoutIcon sx={{ fontSize: 20 }} />
                   <span>Logout</span>
@@ -171,7 +173,7 @@ const Header = () => {
               <Link 
                 to="/admin/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center space-x-2 px-4 py-3 bg-linear-to-r from-blue-500 to-purple-600 rounded-lg font-semibold"
+                className="flex items-center justify-center space-x-2 px-4 py-3 bg-linear-to-r from-[#D4A373] to-[#FAEDCD] text-black rounded-lg font-semibold"
               >
                 <LoginIcon sx={{ fontSize: 20 }} />
                 <span>Admin Login</span>

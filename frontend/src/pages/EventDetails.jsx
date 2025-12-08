@@ -78,8 +78,8 @@ const EventDetails = () => {
     return (
       <div className="min-h-[80vh] flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-600 mb-4"></div>
-          <p className="text-xl text-gray-600">Loading event details...</p>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#BB9457] mb-4"></div>
+          <p className="text-xl text-[#432818]/80">Loading event details...</p>
         </div>
       </div>
     );
@@ -88,13 +88,13 @@ const EventDetails = () => {
   if (error || !event) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center">
-        <div className="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg max-w-md text-center">
-          <SentimentDissatisfiedIcon sx={{ fontSize: 64, color: '#DC2626' }} className="mb-3" />
-          <h2 className="text-xl font-bold text-red-800 mb-2">Event Not Found</h2>
-          <p className="text-red-700 mb-4">{error}</p>
+        <div className="bg-[#6F1D1B]/10 border-l-4 border-[#6F1D1B] p-6 rounded-lg max-w-md text-center">
+          <SentimentDissatisfiedIcon sx={{ fontSize: 64, color: '#6F1D1B' }} className="mb-3" />
+          <h2 className="text-xl font-bold text-[#6F1D1B] mb-2">Event Not Found</h2>
+          <p className="text-[#6F1D1B] mb-4">{error}</p>
           <Link 
             to="/" 
-            className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-200"
+            className="inline-flex items-center space-x-2 bg-[#6F1D1B] hover:bg-[#432818] text-white px-6 py-2 rounded-lg transition duration-200"
           >
             <ArrowBackIcon sx={{ fontSize: 18 }} />
             <span>Back to Events</span>
@@ -113,16 +113,16 @@ const EventDetails = () => {
           onClose={() => setNotification(null)}
         />
       )}
-      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 py-12">
+      <div className="min-h-screen bg-linear-to-br from-[#FFE6A7] to-[#BB9457]/20 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center text-sm text-gray-600">
-          <Link to="/" className="hover:text-blue-600 transition flex items-center space-x-1">
+        <nav className="mb-6 flex items-center text-sm text-[#432818]/80">
+          <Link to="/" className="hover:text-[#6F1D1B] transition flex items-center space-x-1">
             <ArrowBackIcon sx={{ fontSize: 16 }} />
             <span>Events</span>
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900 font-medium">{event.title}</span>
+          <span className="text-[#432818] font-medium">{event.title}</span>
         </nav>
 
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
@@ -132,7 +132,7 @@ const EventDetails = () => {
               {event.imageURL ? (
                 <img src={event.imageURL} alt={event.title} className="w-full h-full object-cover min-h-[500px]" />
               ) : (
-                <div className="w-full h-full bg-linear-to-br from-blue-400 to-purple-500 min-h-[500px] flex items-center justify-center text-white">
+                <div className="w-full h-full bg-linear-to-br from-[#BB9457] to-[#99582A] min-h-[500px] flex items-center justify-center text-white">
                   {event.category === 'cinema' ? (
                     <MovieIcon sx={{ fontSize: 144 }} />
                   ) : event.category === 'football' ? (
@@ -146,7 +146,7 @@ const EventDetails = () => {
                 {event.category}
               </div>
               {event.availableSeats < 10 && event.availableSeats > 0 && (
-                <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                <div className="absolute top-4 left-4 bg-[#6F1D1B] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
                   Only {event.availableSeats} seats left!
                 </div>
               )}
@@ -155,52 +155,52 @@ const EventDetails = () => {
             {/* Details Section */}
             <div className="md:w-1/2 p-8 lg:p-10 flex flex-col">
               <div className="grow">
-                <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-gray-900 leading-tight">{event.title}</h1>
-                <p className="text-gray-600 mb-8 leading-relaxed text-lg">{event.description}</p>
+                <h1 className="text-4xl lg:text-5xl font-extrabold mb-4 text-[#432818] leading-tight">{event.title}</h1>
+                <p className="text-[#432818]/80 mb-8 leading-relaxed text-lg">{event.description}</p>
                 
                 {/* Event Info Cards */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <EventIcon sx={{ fontSize: 32, color: '#3B82F6' }} className="mb-2" />
-                    <p className="text-xs text-gray-600 mb-1">Date & Time</p>
-                    <p className="font-bold text-gray-900">{new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
-                    <p className="text-sm text-gray-600">{new Date(event.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                  <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                    <EventIcon sx={{ fontSize: 32, color: '#6F1D1B' }} className="mb-2" />
+                    <p className="text-xs text-[#432818]/80 mb-1">Date & Time</p>
+                    <p className="font-bold text-[#432818]">{new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
+                    <p className="text-sm text-[#432818]/80">{new Date(event.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                   </div>
-                  <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                    <LocationOnIcon sx={{ fontSize: 32, color: '#10B981' }} className="mb-2" />
-                    <p className="text-xs text-gray-600 mb-1">Location</p>
-                    <p className="font-bold text-gray-900">{event.location}</p>
+                  <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                    <LocationOnIcon sx={{ fontSize: 32, color: '#432818' }} className="mb-2" />
+                    <p className="text-xs text-[#432818]/80 mb-1">Location</p>
+                    <p className="font-bold text-[#432818]">{event.location}</p>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <AttachMoneyIcon sx={{ fontSize: 32, color: '#8B5CF6' }} className="mb-2" />
-                    <p className="text-xs text-gray-600 mb-1">Price per ticket</p>
-                    <p className="text-2xl font-bold text-green-600">${event.price}</p>
+                  <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                    <AttachMoneyIcon sx={{ fontSize: 32, color: '#99582A' }} className="mb-2" />
+                    <p className="text-xs text-[#432818]/80 mb-1">Price per ticket</p>
+                    <p className="text-2xl font-bold text-[#6F1D1B]">${event.price}</p>
                   </div>
-                  <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
-                    <EventSeatIcon sx={{ fontSize: 32, color: '#F97316' }} className="mb-2" />
-                    <p className="text-xs text-gray-600 mb-1">Available Seats</p>
-                    <p className="text-2xl font-bold text-gray-900">{event.availableSeats}</p>
-                    <p className="text-xs text-gray-500">of {event.totalSeats}</p>
+                  <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
+                    <EventSeatIcon sx={{ fontSize: 32, color: '#BB9457' }} className="mb-2" />
+                    <p className="text-xs text-[#432818]/80 mb-1">Available Seats</p>
+                    <p className="text-2xl font-bold text-[#432818]">{event.availableSeats}</p>
+                    <p className="text-xs text-[#432818]/60">of {event.totalSeats}</p>
                   </div>
                 </div>
               </div>
 
               {/* Booking Form */}
-              <div className="bg-linear-to-br from-blue-50 to-purple-50 p-6 rounded-2xl border-2 border-blue-100 shadow-inner">
-                <h3 className="text-2xl font-bold mb-6 text-gray-800 flex items-center">
-                  <ConfirmationNumberIcon sx={{ fontSize: 28, color: '#3B82F6' }} className="mr-2" />
+              <div className="bg-linear-to-br from-[#FFE6A7]/50 to-[#BB9457]/20 p-6 rounded-2xl border-2 border-[#BB9457]/30 shadow-inner">
+                <h3 className="text-2xl font-bold mb-6 text-[#432818] flex items-center">
+                  <ConfirmationNumberIcon sx={{ fontSize: 28, color: '#6F1D1B' }} className="mr-2" />
                   <span>Book Your Tickets</span>
                 </h3>
                 {event.availableSeats === 0 ? (
                   <div className="text-center py-8">
                     <SentimentDissatisfiedIcon sx={{ fontSize: 64, color: '#6B7280' }} className="mb-3" />
-                    <p className="text-xl font-bold text-gray-700 mb-2">Sold Out!</p>
-                    <p className="text-gray-600">This event has no available seats.</p>
+                    <p className="text-xl font-bold text-[#432818] mb-2">Sold Out!</p>
+                    <p className="text-[#432818]/80">This event has no available seats.</p>
                   </div>
                 ) : (
                   <form onSubmit={submitHandler} className="space-y-5">
                     <div>
-                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-[#432818] mb-2 flex items-center space-x-1">
                         <PersonIcon sx={{ fontSize: 16 }} />
                         <span>Full Name *</span>
                       </label>
@@ -209,12 +209,12 @@ const EventDetails = () => {
                         value={customerName}
                         onChange={(e) => setCustomerName(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white"
+                        className="w-full px-4 py-3 border-2 border-[#BB9457]/30 rounded-xl focus:ring-2 focus:ring-[#BB9457] focus:border-[#BB9457] outline-none transition bg-white"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-[#432818] mb-2 flex items-center space-x-1">
                         <EmailIcon sx={{ fontSize: 16 }} />
                         <span>Email Address *</span>
                       </label>
@@ -223,12 +223,12 @@ const EventDetails = () => {
                         value={customerEmail}
                         onChange={(e) => setCustomerEmail(e.target.value)}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white"
+                        className="w-full px-4 py-3 border-2 border-[#BB9457]/30 rounded-xl focus:ring-2 focus:ring-[#BB9457] focus:border-[#BB9457] outline-none transition bg-white"
                         placeholder="john@example.com"
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center space-x-1">
+                      <label className="text-sm font-semibold text-[#432818] mb-2 flex items-center space-x-1">
                         <ConfirmationNumberIcon sx={{ fontSize: 16 }} />
                         <span>Number of Tickets *</span>
                       </label>
@@ -236,7 +236,7 @@ const EventDetails = () => {
                         <button
                           type="button"
                           onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                          className="w-10 h-10 bg-white border-2 border-gray-200 rounded-lg font-bold text-gray-700 hover:bg-gray-100 transition flex items-center justify-center"
+                          className="w-10 h-10 bg-white border-2 border-[#BB9457]/30 rounded-lg font-bold text-[#432818] hover:bg-[#FFE6A7]/50 transition flex items-center justify-center"
                         >
                           <RemoveIcon sx={{ fontSize: 20 }} />
                         </button>
@@ -247,12 +247,12 @@ const EventDetails = () => {
                           value={quantity}
                           onChange={(e) => setQuantity(Math.min(event.availableSeats, Math.max(1, Number(e.target.value))))}
                           required
-                          className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-center font-bold text-lg bg-white"
+                          className="flex-1 px-4 py-3 border-2 border-[#BB9457]/30 rounded-xl focus:ring-2 focus:ring-[#BB9457] focus:border-[#BB9457] outline-none transition text-center font-bold text-lg bg-white"
                         />
                         <button
                           type="button"
                           onClick={() => setQuantity(Math.min(event.availableSeats, quantity + 1))}
-                          className="w-10 h-10 bg-white border-2 border-gray-200 rounded-lg font-bold text-gray-700 hover:bg-gray-100 transition flex items-center justify-center"
+                          className="w-10 h-10 bg-white border-2 border-[#BB9457]/30 rounded-lg font-bold text-[#432818] hover:bg-[#FFE6A7]/50 transition flex items-center justify-center"
                         >
                           <AddIcon sx={{ fontSize: 20 }} />
                         </button>
@@ -260,21 +260,21 @@ const EventDetails = () => {
                     </div>
                     
                     {/* Total Price */}
-                    <div className="bg-white p-4 rounded-xl border-2 border-blue-200">
+                    <div className="bg-white p-4 rounded-xl border-2 border-[#BB9457]">
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-600">Subtotal ({quantity} {quantity === 1 ? 'ticket' : 'tickets'})</span>
-                        <span className="font-bold text-gray-900">${totalPrice}</span>
+                        <span className="text-[#432818]/80">Subtotal ({quantity} {quantity === 1 ? 'ticket' : 'tickets'})</span>
+                        <span className="font-bold text-[#432818]">${totalPrice}</span>
                       </div>
                       <div className="flex justify-between items-center pt-2 border-t">
-                        <span className="text-lg font-bold text-gray-900">Total</span>
-                        <span className="text-2xl font-bold text-green-600">${totalPrice}</span>
+                        <span className="text-lg font-bold text-[#432818]">Total</span>
+                        <span className="text-2xl font-bold text-[#6F1D1B]">${totalPrice}</span>
                       </div>
                     </div>
 
                     <button 
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                      className="w-full bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
                     >
                       {submitting ? (
                         <>
