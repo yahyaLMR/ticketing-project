@@ -88,13 +88,13 @@ const EventDetails = () => {
   if (error || !event) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center">
-        <div className="bg-[#6F1D1B]/10 border-l-4 border-[#6F1D1B] p-6 rounded-lg max-w-md text-center">
-          <SentimentDissatisfiedIcon sx={{ fontSize: 64, color: '#6F1D1B' }} className="mb-3" />
-          <h2 className="text-xl font-bold text-[#6F1D1B] mb-2">Event Not Found</h2>
-          <p className="text-[#6F1D1B] mb-4">{error}</p>
+        <div className="bg-[#A71014]/10 border-l-4 border-[#A71014] p-6 rounded-lg max-w-md text-center">
+          <SentimentDissatisfiedIcon sx={{ fontSize: 64, color: '#A71014' }} className="mb-3" />
+          <h2 className="text-xl font-bold text-[#A71014] mb-2">Event Not Found</h2>
+          <p className="text-[#A71014] mb-4">{error}</p>
           <Link 
             to="/" 
-            className="inline-flex items-center space-x-2 bg-[#6F1D1B] hover:bg-[#432818] text-white px-6 py-2 rounded-lg transition duration-200"
+            className="inline-flex items-center space-x-2 bg-[#A71014] hover:bg-[#432818] text-white px-6 py-2 rounded-lg transition duration-200"
           >
             <ArrowBackIcon sx={{ fontSize: 18 }} />
             <span>Back to Events</span>
@@ -117,7 +117,7 @@ const EventDetails = () => {
         <div className="container mx-auto px-4 max-w-6xl">
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center text-sm text-[#432818]/80">
-          <Link to="/" className="hover:text-[#6F1D1B] transition flex items-center space-x-1">
+          <Link to="/" className="hover:text-[#A71014] transition flex items-center space-x-1">
             <ArrowBackIcon sx={{ fontSize: 16 }} />
             <span>Events</span>
           </Link>
@@ -146,7 +146,7 @@ const EventDetails = () => {
                 {event.category}
               </div>
               {event.availableSeats < 10 && event.availableSeats > 0 && (
-                <div className="absolute top-4 left-4 bg-[#6F1D1B] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
+                <div className="absolute top-4 left-4 bg-[#A71014] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg animate-pulse">
                   Only {event.availableSeats} seats left!
                 </div>
               )}
@@ -161,7 +161,7 @@ const EventDetails = () => {
                 {/* Event Info Cards */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
-                    <EventIcon sx={{ fontSize: 32, color: '#6F1D1B' }} className="mb-2" />
+                    <EventIcon sx={{ fontSize: 32, color: '#A71014' }} className="mb-2" />
                     <p className="text-xs text-[#432818]/80 mb-1">Date & Time</p>
                     <p className="font-bold text-[#432818]">{new Date(event.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                     <p className="text-sm text-[#432818]/80">{new Date(event.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
@@ -174,7 +174,7 @@ const EventDetails = () => {
                   <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
                     <AttachMoneyIcon sx={{ fontSize: 32, color: '#99582A' }} className="mb-2" />
                     <p className="text-xs text-[#432818]/80 mb-1">Price per ticket</p>
-                    <p className="text-2xl font-bold text-[#6F1D1B]">${event.price}</p>
+                    <p className="text-2xl font-bold text-[#A71014]">${event.price}</p>
                   </div>
                   <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
                     <EventSeatIcon sx={{ fontSize: 32, color: '#BB9457' }} className="mb-2" />
@@ -188,7 +188,7 @@ const EventDetails = () => {
               {/* Booking Form */}
               <div className="bg-linear-to-br from-[#FFE6A7]/50 to-[#BB9457]/20 p-6 rounded-2xl border-2 border-[#BB9457]/30 shadow-inner">
                 <h3 className="text-2xl font-bold mb-6 text-[#432818] flex items-center">
-                  <ConfirmationNumberIcon sx={{ fontSize: 28, color: '#6F1D1B' }} className="mr-2" />
+                  <ConfirmationNumberIcon sx={{ fontSize: 28, color: '#A71014' }} className="mr-2" />
                   <span>Book Your Tickets</span>
                 </h3>
                 {event.availableSeats === 0 ? (
@@ -267,14 +267,14 @@ const EventDetails = () => {
                       </div>
                       <div className="flex justify-between items-center pt-2 border-t">
                         <span className="text-lg font-bold text-[#432818]">Total</span>
-                        <span className="text-2xl font-bold text-[#6F1D1B]">${totalPrice}</span>
+                        <span className="text-2xl font-bold text-[#A71014]">${totalPrice}</span>
                       </div>
                     </div>
 
                     <button 
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                      className="w-full bg-linear-to-r from-[#A71014] to-[#99582A] hover:from-[#99582A] hover:to-[#A71014] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
                     >
                       {submitting ? (
                         <>

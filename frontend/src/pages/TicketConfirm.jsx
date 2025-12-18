@@ -74,13 +74,13 @@ const TicketConfirm = () => {
   if (error || !ticket) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center bg-linear-to-br from-[#FFE6A7] to-[#BB9457]/20">
-        <div className="bg-white border-l-4 border-[#6F1D1B] p-8 rounded-lg max-w-md text-center shadow-lg">
-          <CancelIcon sx={{ fontSize: 64, color: '#6F1D1B' }} className="mb-4" />
+        <div className="bg-white border-l-4 border-[#A71014] p-8 rounded-lg max-w-md text-center shadow-lg">
+          <CancelIcon sx={{ fontSize: 64, color: '#A71014' }} className="mb-4" />
           <h2 className="text-2xl font-bold text-[#432818] mb-2">Ticket Not Found</h2>
           <p className="text-[#432818]/80 mb-6">{error}</p>
           <Link 
             to="/" 
-            className="inline-flex items-center space-x-2 bg-[#6F1D1B] hover:bg-[#432818] text-white px-6 py-3 rounded-lg transition duration-200 font-semibold"
+            className="inline-flex items-center space-x-2 bg-[#A71014] hover:bg-[#432818] text-white px-6 py-3 rounded-lg transition duration-200 font-semibold"
           >
             <ArrowBackIcon sx={{ fontSize: 18 }} />
             <span>Browse Events</span>
@@ -107,14 +107,14 @@ const TicketConfirm = () => {
         <div className={`transform transition-all duration-700 ${showSuccess ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-[#BB9457]">
             {/* Header */}
-            <div className="bg-linear-to-r from-[#6F1D1B] to-[#99582A] p-8 text-center relative overflow-hidden">
+            <div className="bg-linear-to-r from-[#A71014] to-[#99582A] p-8 text-center relative overflow-hidden">
               <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
                 <div className="absolute bottom-0 right-0 w-40 h-40 bg-white rounded-full translate-x-20 translate-y-20"></div>
               </div>
               <div className="relative">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg animate-bounce">
-                  <CheckCircleIcon sx={{ fontSize: 64, color: '#6F1D1B' }} />
+                  <CheckCircleIcon sx={{ fontSize: 64, color: '#A71014' }} />
                 </div>
                 <h1 className="text-4xl font-extrabold text-white mb-2">Booking Confirmed!</h1>
                 <p className="text-[#FFE6A7] text-lg">Your ticket is ready</p>
@@ -136,7 +136,7 @@ const TicketConfirm = () => {
               {/* Info Grid */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
-                  <PersonIcon sx={{ fontSize: 20, color: '#6F1D1B' }} className="mb-1" />
+                  <PersonIcon sx={{ fontSize: 20, color: '#A71014' }} className="mb-1" />
                   <p className="text-xs text-[#432818]/80 mb-1">Customer Name</p>
                   <p className="font-bold text-[#432818]">{ticket.customerName}</p>
                 </div>
@@ -153,7 +153,7 @@ const TicketConfirm = () => {
                 <div className="bg-[#FFE6A7]/30 p-4 rounded-xl border border-[#BB9457]/30">
                   <AttachMoneyIcon sx={{ fontSize: 20, color: '#BB9457' }} className="mb-1" />
                   <p className="text-xs text-[#432818]/80 mb-1">Total Price</p>
-                  <p className="font-bold text-[#6F1D1B] text-2xl">${totalPrice}</p>
+                  <p className="font-bold text-[#A71014] text-2xl">${totalPrice}</p>
                 </div>
               </div>
 
@@ -179,7 +179,7 @@ const TicketConfirm = () => {
               <div>
                 <button 
                   onClick={handleDownload}
-                  className="w-full bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
+                  className="w-full bg-linear-to-r from-[#A71014] to-[#99582A] hover:from-[#99582A] hover:to-[#A71014] text-white font-bold py-4 rounded-xl transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center"
                 >
                   <span className="mr-2">📥</span>
                   Download Ticket as PDF
@@ -197,7 +197,7 @@ const TicketConfirm = () => {
               <div className="mt-6 text-center">
                 <Link 
                   to="/" 
-                  className="inline-block text-[#6F1D1B] hover:text-[#99582A] font-semibold transition"
+                  className="inline-block text-[#A71014] hover:text-[#99582A] font-semibold transition"
                 >
                   ← Back to Events
                 </Link>

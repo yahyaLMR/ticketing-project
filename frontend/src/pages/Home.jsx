@@ -15,6 +15,7 @@ import SecurityIcon from '@mui/icons-material/Security';
 import SpeedIcon from '@mui/icons-material/Speed';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import heroBg from '../assets/bg.png';
 
 const Home = () => {
   const location = useLocation();
@@ -68,13 +69,21 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFE6A7]/20 to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-[#f17934] via-[#d61f1c] to-[#ff170f] text-white overflow-hidden">
+      <div 
+        className="relative text-white overflow-hidden"
+        style={{ 
+          backgroundImage: `url(${heroBg})`, 
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center' 
+        }}
+      >
+        <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#BB9457]/20 via-transparent to-[#6F1D1B]/20"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#BB9457] rounded-full blur-3xl opacity-20 animate-pulse"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#6F1D1B] rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
-        <div className="relative container mx-auto px-4 py-28 md:py-40 flex flex-col items-center text-center">
+        <div className="relative container mx-auto px-4 py-60 md:py-80 flex flex-col items-center text-center">
           <div className="mb-6 inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
             <span className="w-2 h-2 bg-[#BB9457] rounded-full mr-2 animate-pulse"></span>
             <span className="text-sm font-medium text-[#FFE6A7]">Live Events Available Now</span>
@@ -102,28 +111,28 @@ const Home = () => {
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#432818] mb-4">Why Choose Us</h2>
-            <div className="w-24 h-1 bg-linear-to-r from-[#6F1D1B] to-[#99582A] mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-linear-to-r from-[#A71014] to-[#99582A] mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-[#BB9457] shadow-sm hover:shadow-2xl transition-all duration-500 text-center transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-linear-to-br from-[#6F1D1B] to-[#99582A] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              <div className="w-20 h-20 bg-linear-to-br from-[#A71014] to-[#99582A] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <SpeedIcon sx={{ fontSize: 36 }} />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-[#432818] group-hover:text-[#6F1D1B] transition-colors">Instant Booking</h3>
+              <h3 className="text-2xl font-bold mb-3 text-[#432818] group-hover:text-[#A71014] transition-colors">Instant Booking</h3>
               <p className="text-[#432818]/80 leading-relaxed">Secure your spot in seconds with our lightning-fast reservation system.</p>
             </div>
             <div className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-[#BB9457] shadow-sm hover:shadow-2xl transition-all duration-500 text-center transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-linear-to-br from-[#99582A] to-[#6F1D1B] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              <div className="w-20 h-20 bg-linear-to-br from-[#99582A] to-[#A71014] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <SecurityIcon sx={{ fontSize: 36 }} />
               </div>
               <h3 className="text-2xl font-bold mb-3 text-[#432818] group-hover:text-[#99582A] transition-colors">Secure Payments</h3>
               <p className="text-[#432818]/80 leading-relaxed">Your transactions are protected with top-tier security encryption.</p>
             </div>
             <div className="group p-8 rounded-3xl bg-white border border-gray-100 hover:border-[#BB9457] shadow-sm hover:shadow-2xl transition-all duration-500 text-center transform hover:-translate-y-2">
-              <div className="w-20 h-20 bg-linear-to-br from-[#6F1D1B] to-[#99582A] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+              <div className="w-20 h-20 bg-linear-to-br from-[#A71014] to-[#99582A] text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                 <SupportAgentIcon sx={{ fontSize: 36 }} />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-[#432818] group-hover:text-[#6F1D1B] transition-colors">24/7 Support</h3>
+              <h3 className="text-2xl font-bold mb-3 text-[#432818] group-hover:text-[#A71014] transition-colors">24/7 Support</h3>
               <p className="text-[#432818]/80 leading-relaxed">Our dedicated team is always here to help you with any questions.</p>
             </div>
           </div>
@@ -147,7 +156,7 @@ const Home = () => {
                     onClick={() => setFilter(category)}
                     className={`px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 border-2 ${
                       filter === category
-                        ? 'bg-linear-to-r from-[#6F1D1B] to-[#99582A] text-white shadow-xl border-transparent scale-105'
+                        ? 'bg-linear-to-r from-[#A71014] to-[#99582A] text-white shadow-xl border-transparent scale-105'
                         : 'bg-white text-[#432818] hover:bg-[#FFE6A7]/50 shadow-lg border-gray-200 hover:border-[#BB9457]'
                     }`}
                   >
@@ -162,21 +171,21 @@ const Home = () => {
           {loading ? (
             <div className="flex items-center justify-center py-20">
               <div className="text-center">
-                <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#6F1D1B] mb-4"></div>
+                <div className="inline-block animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#A71014] mb-4"></div>
                 <p className="text-xl text-[#432818]/80">Loading amazing events...</p>
               </div>
             </div>
           ) : error ? (
             <div className="flex items-center justify-center py-20">
-              <div className="bg-[#6F1D1B]/10 border-l-4 border-[#6F1D1B] p-6 rounded-lg max-w-md">
+              <div className="bg-[#A71014]/10 border-l-4 border-[#A71014] p-6 rounded-lg max-w-md">
                 <div className="flex items-center mb-2">
-                  <ErrorOutlineIcon sx={{ fontSize: 32, color: '#6F1D1B' }} className="mr-3" />
-                  <h2 className="text-xl font-bold text-[#6F1D1B]">Oops!</h2>
+                  <ErrorOutlineIcon sx={{ fontSize: 32, color: '#A71014' }} className="mr-3" />
+                  <h2 className="text-xl font-bold text-[#A71014]">Oops!</h2>
                 </div>
-                <p className="text-[#6F1D1B]">{error}</p>
+                <p className="text-[#A71014]">{error}</p>
                 <button 
                   onClick={() => window.location.reload()} 
-                  className="mt-4 bg-[#6F1D1B] hover:bg-[#432818] text-white px-6 py-2 rounded-lg transition duration-200 flex items-center space-x-2"
+                  className="mt-4 bg-[#A71014] hover:bg-[#432818] text-white px-6 py-2 rounded-lg transition duration-200 flex items-center space-x-2"
                 >
                   <RefreshIcon sx={{ fontSize: 20 }} />
                   <span>Try Again</span>
@@ -219,7 +228,7 @@ const Home = () => {
                       {event.category}
                     </div>
                     {event.availableSeats < 10 && event.availableSeats > 0 && (
-                      <div className="absolute top-3 left-3 bg-[#6F1D1B] text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-pulse">
+                      <div className="absolute top-3 left-3 bg-[#A71014] text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-pulse">
                         Only {event.availableSeats} left!
                       </div>
                     )}
@@ -230,7 +239,7 @@ const Home = () => {
                     )}
                   </div>
                   <div className="p-6 grow flex flex-col">
-                    <h2 className="text-2xl font-bold mb-3 text-[#432818] line-clamp-2 group-hover:text-[#6F1D1B] transition-colors">
+                    <h2 className="text-2xl font-bold mb-3 text-[#432818] line-clamp-2 group-hover:text-[#A71014] transition-colors">
                       {event.title}
                     </h2>
                     <div className="space-y-2 mb-4">
@@ -250,14 +259,14 @@ const Home = () => {
                     <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-100">
                       <div>
                         <p className="text-sm text-[#432818]/60">Starting from</p>
-                        <p className="text-3xl font-bold text-[#6F1D1B]">${event.price}</p>
+                        <p className="text-3xl font-bold text-[#A71014]">${event.price}</p>
                       </div>
                       <Link 
                         to={`/event/${event._id}`}
                         className={`px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
                           event.availableSeats === 0
                             ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                            : 'bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white'
+                            : 'bg-linear-to-r from-[#A71014] to-[#99582A] hover:from-[#99582A] hover:to-[#A71014] text-white'
                         }`}
                         onClick={(e) => event.availableSeats === 0 && e.preventDefault()}
                       >

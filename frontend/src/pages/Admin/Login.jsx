@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-[#432818] via-[#6F1D1B] to-[#99582A] flex items-center justify-center px-4 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-[#432818] via-[#A71014] to-[#99582A] flex items-center justify-center px-4 py-12 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -60,7 +60,7 @@ const Login = () => {
         <div className="bg-white/95 backdrop-blur-lg p-8 md:p-10 rounded-3xl shadow-2xl border border-white/20">
           {/* Logo/Icon */}
           <div className="text-center mb-8">
-            <div className="w-20 h-20 bg-linear-to-r from-[#6F1D1B] to-[#99582A] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg transform rotate-3">
+            <div className="w-20 h-20 bg-linear-to-r from-[#A71014] to-[#99582A] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg transform rotate-3">
               <LockIcon sx={{ fontSize: 48, color: 'white' }} className="transform -rotate-3" />
             </div>
             <h1 className="text-3xl font-extrabold text-[#432818] mb-2">Admin Login</h1>
@@ -69,10 +69,10 @@ const Login = () => {
 
           {/* Error Message */}
           {error && (
-            <div className="mb-6 p-4 bg-[#6F1D1B]/10 border-l-4 border-[#6F1D1B] rounded-lg animate-shake">
+            <div className="mb-6 p-4 bg-[#A71014]/10 border-l-4 border-[#A71014] rounded-lg animate-shake">
               <div className="flex items-center">
-                <WarningIcon sx={{ fontSize: 20, color: '#6F1D1B' }} className="mr-2" />
-                <p className="text-[#6F1D1B] text-sm font-medium">{error}</p>
+                <WarningIcon sx={{ fontSize: 20, color: '#A71014' }} className="mr-2" />
+                <p className="text-[#A71014] text-sm font-medium">{error}</p>
               </div>
             </div>
           )}
@@ -126,7 +126,7 @@ const Login = () => {
             <button 
               type="submit"
               disabled={loading}
-              className="w-full bg-linear-to-r from-[#6F1D1B] to-[#99582A] hover:from-[#99582A] hover:to-[#6F1D1B] text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+              className="w-full bg-linear-to-r from-[#A71014] to-[#99582A] hover:from-[#99582A] hover:to-[#A71014] text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
             >
               {loading ? (
                 <>

@@ -34,7 +34,7 @@ function App() {
             <Route path="/admin/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
-        <footer className="bg-[#432818] text-[#FFE6A7] py-8 mt-auto">
+        <footer className="bg-[#A71014] text-[#FFE6A7] py-8 mt-auto">
           <div className="container mx-auto px-4 text-center">
             <div className="mb-4 flex items-center justify-center space-x-2">
               <ConfirmationNumberIcon sx={{ fontSize: 32, color: '#BB9457' }} />

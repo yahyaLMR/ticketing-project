@@ -23,10 +23,10 @@ const Notification = ({ type = 'info', message, onClose, duration = 5000 }) => {
       icon: <CheckCircleIcon sx={{ fontSize: 24, color: '#BB9457' }} />,
     },
     error: {
-      bg: 'bg-[#6F1D1B]/10',
-      border: 'border-[#6F1D1B]',
-      text: 'text-[#6F1D1B]',
-      icon: <ErrorIcon sx={{ fontSize: 24, color: '#6F1D1B' }} />,
+      bg: 'bg-[#A71014]/10',
+      border: 'border-[#A71014]',
+      text: 'text-[#A71014]',
+      icon: <ErrorIcon sx={{ fontSize: 24, color: '#A71014' }} />,
     },
     warning: {
       bg: 'bg-[#99582A]/10',
