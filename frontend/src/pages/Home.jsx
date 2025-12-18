@@ -16,6 +16,7 @@ import SpeedIcon from '@mui/icons-material/Speed';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import heroBg from '../assets/bg.png';
+import { DUMMY_EVENTS } from '../data/dummyEvents';
 
 const Home = () => {
   const location = useLocation();
@@ -33,7 +34,9 @@ const Home = () => {
         setError(null);
       } catch (error) {
         console.error(error);
-        setError('Failed to load events. Please try again later.');
+        console.log("Backend not reachable, using dummy data");
+        setEvents(DUMMY_EVENTS);
+        setError(null);
       } finally {
         setLoading(false);
       }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import API from '../services/api';
 import Notification from '../components/Notification';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -16,6 +16,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 const TicketConfirm = () => {
   const { id } = useParams();
+  const location = useLocation();
   const [ticket, setTicket] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -23,6 +24,13 @@ const TicketConfirm = () => {
   const [notification, setNotification] = useState(null);
 
   useEffect(() => {
+    if (location.state?.ticket) {
+      setTicket(location.state.ticket);
+      setLoading(false);
+      setTimeout(() => setShowSuccess(true), 300);
+      return;
+    }
+
     const fetchTicket = async () => {
       try {
         setLoading(true);
@@ -38,9 +46,14 @@ const TicketConfirm = () => {
     };
 
     fetchTicket();
-  }, [id]);
+  }, [id, location.state]);
 
   const handleDownload = async () => {
+    if (ticket.isOffline) {
+      window.print();
+      return;
+    }
+
     try {
       const response = await API.get(`/tickets/${ticket._id}/download`, {
         responseType: 'blob',
@@ -169,7 +182,7 @@ const TicketConfirm = () => {
                   <p className="text-center text-sm text-[#432818]/80 mb-4 font-semibold">Scan this QR code at the venue</p>
                   <div className="flex justify-center">
                     <div className="bg-white p-4 rounded-xl shadow-lg border-4 border-white">
-                      <img src={ticket.qrCode} alt="Ticket QR Code" className="w-56 h-56" />
+                      <img src={ticket.qrCode} alt="Ticket QR Code" className="w-80 h-80" />
                     </div>
                   </div>
                 </div>
